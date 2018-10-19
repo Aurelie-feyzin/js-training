@@ -5,7 +5,10 @@
  * and return the total
  *
  */
-
+function total(array) {
+    return array.reduce(
+        (accumulateur, valeurCourante) => accumulateur + valeurCourante);
+}
 
 //* Begin of tests
 const assert = require('assert')

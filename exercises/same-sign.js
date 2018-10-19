@@ -8,6 +8,14 @@
  */
 
 // Your code :
+function sameSign(number1, number2) {
+    return (sign(number1) === sign(number2));
+}
+
+function sign(number) {
+    var signNumber = (number > 0 ? 1 : -1 );
+    return (number === 0 ? 0 : signNumber);
+}
 
 //* Begin of tests
 const assert = require('assert')

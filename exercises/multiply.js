@@ -9,6 +9,28 @@
  */
 
 // Your code :
+function multiply(number1, number2) {
+    var sum = 0;
+    var signResult = sign(number1) === sign(number2) ? 1 : -1; 
+    if (number1 === 0 || number2 === 0) {
+         signResult = 0;
+    }  else {
+        var multiplier = abs(number1) < abs(number2) ? abs(number1) : abs(number2); 
+        var multiplicand = abs(number1) === abs(multiplier) ? abs(number2) : abs(number1); 
+        for (var i = 0; i < abs(multiplier); i++) {
+            sum += multiplicand;
+        }
+    }
+    return (signResult >= 0 ? sum : -sum);
+}
+function abs(number) {
+    return (number >= 0 ? number : -number); 
+}
+
+function sign(number) {
+    var signNumber = (number > 0 ? 1 : -1 );
+    return (number === 0 ? 0 : signNumber);
+}
 
 //* Begin of tests
 const assert = require('assert')
